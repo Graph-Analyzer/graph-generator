@@ -1,0 +1,67 @@
+POST http://localhost:8082/generate
+Content-Type: application/json
+
+{
+  "l1_pops": 3,
+  "l2_pops": 15,
+  "pop_regions": 9,
+  "core_node_scaling_threshold": 7,
+  "random_core_nodes": 0,
+  "random_core_node_connections": 0,
+  "random_distribution": "uniform",
+  "topology": "gabriel",
+  "no_cut_edges_and_nodes": true
+}
+
+###
+POST http://localhost:8082/generate
+Content-Type: application/json
+
+{
+  "l1_pops": 3,
+  "l2_pops": 15,
+  "pop_regions": 9,
+  "core_nodes_scaling_threshold": 7,
+  "random_core_nodes": 0,
+  "random_core_node_connections": 0,
+  "random_distribution": "normal",
+  "topology": "gabriel",
+  "no_cut_edges_and_nodes": true
+}
+
+###
+POST http://localhost:8082/convert?file_format=gexf
+Content-Type: application/json
+
+{
+   "nodes":[
+      {
+         "node_id":"0_1",
+         "attributes":{
+            "pop_region":"0",
+            "node_type":"core",
+            "coordinate_x":0.4671831947233605,
+            "coordinate_y":0.36467550076790156
+         }
+      },
+      {
+         "node_id":"0_2",
+         "attributes":{
+            "pop_region":"0",
+            "node_type":"core",
+            "coordinate_x":0.4771831947233605,
+            "coordinate_y":0.36467550076790156
+         }
+      }
+   ],
+   "edges":[
+      {
+         "node_from":"0_1",
+         "node_to":"0_2",
+         "attributes":{
+            "weight":1.0,
+            "edge_type":"core_to_core"
+         }
+      }
+   ]
+}
