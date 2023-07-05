@@ -1,5 +1,5 @@
-# Graph Generator - API
-The API is responsible for generating the service provider network
+# Graph Generator
+The Graph Generator is responsible for generating the service provider network
 
 
 ## Run Locally
